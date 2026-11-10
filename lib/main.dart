@@ -31,6 +31,56 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Profile Dhani',
+        ),
+        actions: [
+          IconButton(onPressed: (){ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('thanks udh klik'))
+          );
+          }
+              , icon: Icon(Icons.info_outline))
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        child: Icon(
+                          Icons.person,
+                          size: 50,
+                        ),
+                      ),
+                      SizedBox(height: 8,),
+                      Text(
+                        'Dhani Kusuma',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                      SizedBox(height: 8,),
+                      Text(
+                        '1124160014',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
