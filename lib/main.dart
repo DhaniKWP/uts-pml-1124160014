@@ -75,11 +75,101 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 24),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Info Kontak',
+                          style: Theme.of(context)
+                              .textTheme.titleLarge,
+                        ),
+
+                        const SizedBox(height: 16),
+
+                        const InfoTile(
+                          icon: Icons.email,
+                          label: 'Email',
+                          value: 'dhanikusuma256@gmail.com',
+                        ),
+
+                        const InfoTile(
+                          icon: Icons.phone,
+                          label: 'Nomor HP',
+                          value: '0895321813103',
+                        ),
+
+                        const InfoTile(
+                          icon: Icons.school,
+                          label: 'Kelas',
+                          value: 'TI24PSE3',
+                        ),
+
+                        const InfoTile(
+                          icon: Icons.code,
+                          label: 'GitHub',
+                          value: 'github.com/dhaniKWP',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Keahlian dan Hobi',
+                          style: Theme.of(context)
+                              .textTheme.titleLarge,
+                        ),
+
+                        const SizedBox(height: 16),
+
+                        const InfoTile(
+                          icon: Icons.music_note,
+                          label: 'Mendengar musik',
+                          value: 'Payung Teduh, Reality Club',
+                        ),
+
+                        const InfoTile(
+                          icon: Icons.web,
+                          label: 'Web Dev',
+                          value: 'Laravel',
+                        ),
+
+                        const InfoTile(
+                          icon: Icons.computer,
+                          label: 'Hobi',
+                          value: 'Ngulik2 aja',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Mantap di pencet',
+              ),
+            ),
+          );
+        },
+        child: const Icon(Icons.message),
       ),
     );
   }
